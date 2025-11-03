@@ -18,11 +18,9 @@ public class WinningLotto {
         }
     }
 
-    public int getBonusNumber() {
-        return bonusNumber;
-    }
-
-    public Lotto getWinningLotto() {
-        return winningLotto;
+    public LottoRank match(Lotto userLotto) {
+        int matchCount = winningLotto.countMatch(userLotto);
+        boolean bonusMatch = userLotto.contains(bonusNumber);
+        return LottoRank.of(matchCount, bonusMatch);
     }
 }
