@@ -46,6 +46,20 @@ public class Lotto {
         return false;
     }
 
+    public int countMatch(Lotto other) {
+        int count = 0;
+        for (int n : numbers) {
+            if (other.numbers.contains(n)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public boolean contains(int number) {
+        return numbers.contains(number);
+    }
+
     @Override
     public String toString() {
         return numbers.toString();
